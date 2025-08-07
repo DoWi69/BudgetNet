@@ -1,8 +1,7 @@
 {
   "name": "budgetnet",
   "version": "1.0.0",
-  "description": "Application de gestion de budget pour particuliers",
-  "main": "index.jsx",
+  "description": "Application de gestion de budget",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
