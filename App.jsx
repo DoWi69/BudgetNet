@@ -1,7 +1,7 @@
 // App.jsx
 import { useState, useEffect } from "react";
-import Calendar from "react-calendar";
-import "react-calendar/dist/Calendar.css";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer, LineChart, Line, XAxis, YAxis, CartesianGrid } from "recharts";
 
 const COLORS = ["#8e44ad", "#3498db", "#2ecc71", "#f39c12", "#e74c3c", "#1abc9c"];
@@ -76,7 +76,7 @@ export default function App() {
       <h1 style={{ textAlign: "center", color: "#2c3e50" }}>BudgetNet 💸</h1>
 
       <div style={{ display: "flex", flexDirection: "column", gap: "1rem", maxWidth: 600, margin: "0 auto", backgroundColor: "#fff", padding: "2rem", borderRadius: "12px", boxShadow: "0 0 10px rgba(0,0,0,0.1)" }}>
-        <Calendar onChange={setDate} value={date} />
+        <DatePicker selected={date} onChange={(date) => setDate(date)} dateFormat="yyyy-MM-dd" className="datepicker" />
 
         <select value={type} onChange={(e) => setType(e.target.value)}>
           <option value="revenu">Revenu</option>
