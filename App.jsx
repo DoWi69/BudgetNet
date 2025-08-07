@@ -66,10 +66,16 @@ export default function App() {
   });
 
   return (
-    <div style={{ minHeight: "100vh", color: "#222", padding: "2rem", fontFamily: "sans-serif" }}>
-      <h1 style={{ textAlign: "center" }}>BudgetNet 💸</h1>
+    <div style={{
+      minHeight: "100vh",
+      color: "#1c1c1c",
+      padding: "2rem",
+      fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
+      backgroundColor: "#f3f4f6"
+    }}>
+      <h1 style={{ textAlign: "center", color: "#2c3e50" }}>BudgetNet 💸</h1>
 
-      <div style={{ display: "flex", flexDirection: "column", gap: "1rem", maxWidth: 500, margin: "0 auto" }}>
+      <div style={{ display: "flex", flexDirection: "column", gap: "1rem", maxWidth: 600, margin: "0 auto", backgroundColor: "#fff", padding: "2rem", borderRadius: "12px", boxShadow: "0 0 10px rgba(0,0,0,0.1)" }}>
         <Calendar onChange={setDate} value={date} />
 
         <select value={type} onChange={(e) => setType(e.target.value)}>
@@ -94,12 +100,12 @@ export default function App() {
           <input type="checkbox" checked={recurrent} onChange={() => setRecurrent(!recurrent)} /> Répéter chaque mois
         </label>
 
-        <button onClick={ajouterEntree}>Ajouter</button>
+        <button onClick={ajouterEntree} style={{ backgroundColor: "#8e44ad", color: "white", border: "none", padding: "10px", borderRadius: "8px", cursor: "pointer" }}>Ajouter</button>
       </div>
 
-      <div style={{ display: "flex", justifyContent: "space-around", marginTop: "2rem", flexWrap: "wrap" }}>
-        <div>
-          <h3>Revenus</h3>
+      <div style={{ display: "flex", justifyContent: "space-around", marginTop: "2rem", flexWrap: "wrap", gap: "2rem" }}>
+        <div style={{ backgroundColor: "#fff", padding: "1rem", borderRadius: "8px", width: "100%", maxWidth: 400 }}>
+          <h3 style={{ color: "#2ecc71" }}>Revenus</h3>
           <ul>
             {revenus.map((r, i) => (
               <li key={i}>
@@ -109,8 +115,8 @@ export default function App() {
             ))}
           </ul>
         </div>
-        <div>
-          <h3>Dépenses</h3>
+        <div style={{ backgroundColor: "#fff", padding: "1rem", borderRadius: "8px", width: "100%", maxWidth: 400 }}>
+          <h3 style={{ color: "#e74c3c" }}>Dépenses</h3>
           <ul>
             {depenses.map((d, i) => (
               <li key={i}>
@@ -122,9 +128,9 @@ export default function App() {
         </div>
       </div>
 
-      <h2 style={{ textAlign: "center", marginTop: "2rem" }}>Solde : {solde}€</h2>
+      <h2 style={{ textAlign: "center", marginTop: "2rem", color: solde >= 0 ? "#2ecc71" : "#e74c3c" }}>Solde : {solde}€</h2>
 
-      <div style={{ height: 300, marginTop: "2rem" }}>
+      <div style={{ height: 300, marginTop: "2rem", backgroundColor: "#fff", padding: "1rem", borderRadius: "8px" }}>
         <ResponsiveContainer>
           <PieChart>
             <Pie data={dataGraph} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={100}>
@@ -137,7 +143,7 @@ export default function App() {
         </ResponsiveContainer>
       </div>
 
-      <div style={{ height: 300, marginTop: "2rem" }}>
+      <div style={{ height: 300, marginTop: "2rem", backgroundColor: "#fff", padding: "1rem", borderRadius: "8px" }}>
         <ResponsiveContainer width="100%">
           <LineChart data={dataLine}>
             <CartesianGrid strokeDasharray="3 3" />
