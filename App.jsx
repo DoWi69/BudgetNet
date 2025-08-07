@@ -71,7 +71,7 @@ export default function App() {
       color: "#1c1c1c",
       padding: "2rem",
       fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
-      backgroundColor: "#f3f4f6"
+      backgroundColor: "#ffffff"
     }}>
       <h1 style={{ textAlign: "center", color: "#2c3e50" }}>BudgetNet 💸</h1>
 
